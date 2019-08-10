@@ -1,5 +1,7 @@
-# IGCSE-Computer-Science-2018-Pre-Release-June-2018
-Task
+# IGCSE-Computer-Science-2018-Pre-Release-June-2018-solution
+
+Below is the task from Cambridge's June 2018 pre release.  The files on this repository are the Python and Pseudocode pre releease that I wrote in January 2018.
+
 A farmer records the milk production of a herd of cows. Every cow has a unique 3-digit identity code. Each cow can be milked twice a day, seven days a week. The volume of milk from each cow is recorded in litres correct to one decimal place (yield) every time the cow is milked. The size of the herd is fixed. At the end of the week the total and the average yield for each cow for that week is calculated.
 
 The farmer identifies the cow that has produced the most milk that week. The farmer also identifies any cows that have produced less than 12 litres of milk on four or more days that week.
