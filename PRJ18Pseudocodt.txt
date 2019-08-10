@@ -1,0 +1,54 @@
+CowIDs <-- []
+MilkStore <-- []
+YieldCounter <-- 0
+LowYieldList <-- []
+OUTPUT "How many cows are there in the herd?"
+INPUT NoOfCows
+FOR i <-- 1 TO NoOfCows
+	OUTPUT "Enter the ID of the cow starting with number 100"
+NEXT
+	INPUT CowID
+	IF CowID < 100 OR CowID > 999
+		THEN
+		OUTPUT "Cow ID is out of range specified, please enter CowID again"
+		INPUT CowID
+	ELSE
+		CowIDs [i]= CowID
+	ENDIF
+FOR Day <-- 1 TO 7
+NEXT
+	FOR j <-- 1 TO NoOfCows
+	NEXT
+		PerDayMilk = 0
+		FOR k = 1 TO 2
+			OUTPUT "What is the yield of the cow"
+			INPUT MilkYield, CowIDs[j]
+			NEXT
+			MilkStore[j] += MilkYield
+			PerDayMilk += MilkYield
+		IF PerDayMilk <12 THEN
+		LowYieldList[j] +=1
+		ENDIF
+Sum = 0.0
+FOR i <-- 1 TO NoOfCows
+	MilkStore[i] = Sum
+Average = Sum / NoOfYields
+NEXT
+OUTPUT "Total yield for the week",Sum
+OUTPUT "Average yield per cow",Average
+
+MaxYield = 0
+MaxYieldCowID = ""
+FOR m <-- 1 TO NoOfCows
+NEXT
+	IF MilkStore[m] > MaxYield
+		MaxYield = MilkStore[m]
+		MaxYieldCowID = CowIDs[m]
+	ENDIF
+OUTPUT "Cow," + MaxYieldCowID +"has the maximum yield of"+MaxYield +"litres"
+
+FOR n <-- 1 TO NoOfCows
+NEXT
+	IF LowYieldList[n] >=4 THEN
+		OUTPUT "CowID" +CowIDs[n]+"yielded low milk for"+LowYieldList[n]+"days"
+	ENDIF
